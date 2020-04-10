@@ -1,0 +1,63 @@
+site_name: AutoKeras
+theme:
+  favicon: '/img/favicon.png'
+  logo: '/img/logo_white.svg'
+  name: 'material'
+  palette:
+    primary: 'red'
+    accent: 'red'
+
+docs_dir: sources
+repo_url: https://github.com/keras-team/autokeras
+site_url: http://autokeras.com
+edit_uri: ""
+site_description: 'Documentation for AutoKeras.'
+google_analytics: ['UA-44322747-3', 'autokeras.com']
+markdown_extensions:
+  - codehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@8.4.4/dist/mermaid.min.js
+
+nav:
+  - Home: index.md
+  - Installation: install.md
+  - Getting Started:
+    - Overview: tutorial/overview.md
+    - Image Classification: tutorial/image_classification.md
+    - Image Regression: tutorial/image_regression.md
+    - Text Classification: tutorial/text_classification.md
+    - Text Regression: tutorial/text_regression.md
+    - Structured Data Classification: tutorial/structured_data_classification.md
+    - Structured Data Regression: tutorial/structured_data_regression.md
+    - Multi-Modal and Multi-Task: tutorial/multi.md
+    - Customized Model: tutorial/customized.md
+    - Export Model: tutorial/export.md
+    - FAQ: tutorial/faq.md
+  - Examples:
+    - MNIST Hand-Written Digits: examples/mnist.md
+    - IMDB Movie Reviews: examples/imdb.md
+    - Titanic Survival Prediction: examples/titanic.md
+  - Docker: docker.md
+  - Contributing Guide: contributing.md
+  - Documentation:
+    - Task APIs:
+      - ImageClassifier: image_classifier.md
+      - ImageRegressor: image_regressor.md
+      - TextClassifier: text_classifier.md
+      - TextRegressor: text_regressor.md
+      - StructuredDataClassifier: structured_data_classifier.md
+      - StructuredDataRegressor: structured_data_regressor.md
+    - AutoModel: auto_model.md
+    - Building Blocks:
+      - Base Classes: base.md
+      - Node: node.md
+      - Preprocessor: preprocessor.md
+      - Block: block.md
+      - Head: head.md
+  - About: about.md

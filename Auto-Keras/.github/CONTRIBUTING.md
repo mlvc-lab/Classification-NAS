@@ -1,0 +1,82 @@
+# Contributing Guide
+
+Contributions are welcome, and greatly appreciated!
+Follow the tag of [good first issue](https://github.com/keras-team/autokeras/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+for the issues for beginner.
+
+If you don't know where to start, please join our community on [Slack](https://autokeras.com/#community) and ask us.
+We will help you get started!
+
+## Pull Request Guide
+
+1. Is this the first pull request that you're making with GitHub? If so, read the guide [Making a pull request to an open-source project](https://github.com/gabrieldemarmiesse/getting_started_open_source).
+
+2. Include "resolves #issue_number" in the description of the pull request if applicable. Briefly describe your contribution.
+
+3. Submit the pull request from the first day of your development and create it as a [draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/). Click `ready for review` when finished and passed the all the checks.
+
+4. For the case of bug fixes, add new test cases which would fail before your bug fix.
+
+
+## Setup Environment
+
+### virtualenv
+Install [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/).
+Create a new virtualenv named `ak` based on python3.
+```
+mkvirtualenv -p python3 ak 
+```
+Please use this virtualenv for development.
+
+### Installation
+Clone the repo. Go to the repo directory.
+Run the following commands.
+```
+workon ak
+
+pip install -e ".[tests]"
+pip uninstall autokeras
+add2virtualenv .
+
+pip install mkdocs
+pip install mkdocs-material
+pip install autopep8
+pip install git+https://github.com/gabrieldemarmiesse/typed_api.git@0.1.1
+``` 
+
+
+## Run Tests
+
+Activate the virtualenv.
+Go to the repo directory
+Run the following lines to run the tests.
+
+Run all the tests.
+```
+pytest tests
+```
+
+Run all the unit tests.
+```
+pytest tests/autokeras
+```
+
+Run all the integration tests.
+```
+pytest tests/integration_tests
+```
+
+## Code Style
+### Option 1: Automatic
+It automatically formats the code every time you commit.
+To setup:
+1. Install Docker.
+2. Run `cd .git/hooks && ln -s -f ../../shell/pre-commit.sh pre-commit` from the repo directory.
+### Option 2: Manually
+You can run the following manually every time you want to format your code.
+1. Run `shell/format.sh` to format your code.
+2. Run `shell/lint.sh` to check.
+
+## Docstrings
+Docstrings should follow our style.
+Just check the style of other docstrings in AutoKeras.
